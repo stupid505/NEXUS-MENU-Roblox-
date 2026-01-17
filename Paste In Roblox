@@ -1,0 +1,2 @@
+# Copy down below and execute.
+loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/stupid505/NEXUS-MENU-Roblox-/main/Main%20Menu%20(Public)"))()
