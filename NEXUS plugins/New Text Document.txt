@@ -1,2 +1,0 @@
-local plug = "Placeholder"
-print("Loaded Plugin"..plug)
