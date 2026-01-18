@@ -1,0 +1,7 @@
+-- Command Template:
+{
+	Name = "Template CMD",
+	Run = function()
+		print("Hello World!")
+	end
+}
