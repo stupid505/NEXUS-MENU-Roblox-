@@ -1,3 +1,232 @@
 -- IF YOU ARE NOT A DEVELOPER/TESTER THEN THIS IS A BETA MENU AND IT IS NOT DONE. EVERYTHING MAY BE BUGGED AND DETECTED. USE AT YOUT OWN RISK.
 print("IF YOU ARE NOT A DEVELOPER/TESTER THEN THIS IS A BETA MENU AND IT IS NOT DONE. EVERYTHING MAY BE BUGGED AND DETECTED. USE AT YOUT OWN RISK.")
-print("Placeholder. (This is for developers :3"))
+
+--                                                      's
+   --░██████╗░░█████╗░██████╗░  ███████╗░█████╗░██╗░░██╗
+   --██╔════╝░██╔══██╗██╔══██╗  ██╔════╝██╔══██╗╚██╗██╔╝
+   --██║░░██╗░██║░░██║██║░░██║  █████╗░░██║░░██║░╚███╔╝░
+   --██║░░╚██╗██║░░██║██║░░██║  ██╔══╝░░██║░░██║░██╔██╗░
+   --╚██████╔╝╚█████╔╝██████╔╝  ██║░░░░░╚█████╔╝██╔╝╚██╗
+   --░╚═════╝░░╚════╝░╚═════╝░  ╚═╝░░░░░░╚════╝░╚═╝░░╚═╝
+
+
+--███╗░░██╗███████╗██╗░░██╗██╗░░░██╗░██████╗  ███╗░░░███╗███████╗███╗░░██╗██╗░░░██╗
+--████╗░██║██╔════╝╚██╗██╔╝██║░░░██║██╔════╝  ████╗░████║██╔════╝████╗░██║██║░░░██║
+--██╔██╗██║█████╗░░░╚███╔╝░██║░░░██║╚█████╗░  ██╔████╔██║█████╗░░██╔██╗██║██║░░░██║
+--██║╚████║██╔══╝░░░██╔██╗░██║░░░██║░╚═══██╗  ██║╚██╔╝██║██╔══╝░░██║╚████║██║░░░██║
+--██║░╚███║███████╗██╔╝╚██╗╚██████╔╝██████╔╝  ██║░╚═╝░██║███████╗██║░╚███║╚██████╔╝
+--╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝░╚═════╝░╚═════╝░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░╚═════╝░
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local version = "1.0.0 DEV"
+local test = "True"
+
+-- EDIT COMMANDS DOWN HERE
+local Commands = {
+	{
+		Name = "Print Credits #menu",
+		Run = function()
+			print("Created by @Gfox_studios42")
+			print("Version: "..version)
+			print("Current Version is Test: "..test)
+			print("Use command 'devtest (Tag: #menu)' for the development/BETA version.")
+		end
+	},
+	{
+		Name = "Speed (100) #player",
+		Run = function()
+			if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+				Player.Character.Humanoid.WalkSpeed = 100
+			end
+		end
+	},
+	{
+		Name = "Kill (You) #player",
+		Run = function()
+			if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+				Player.Character.Humanoid.Health = 0
+			end
+		end
+	},
+	{
+		Name = "Speed+ (500) #player",
+		Run = function()
+			if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+				Player.Character.Humanoid.WalkSpeed = 500
+			end
+		end
+	},
+	{
+		Name = "devtest #menu",
+		Run = function() 
+			loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/stupid505/NEXUS-MENU-Roblox-/main/Main%20Menu%20(DEV)"))()
+		end
+	},
+	{
+		Name = "GOD Mode (Immunity) #player",
+		Run = function()
+			if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+				Player.Character.Humanoid.Health = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+			end
+		end
+	},
+	{
+		Name = "Speed+++ (1000) #player",
+		Run = function()
+			if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+				Player.Character.Humanoid.WalkSpeed = 1000
+			end
+		end
+	},
+	{
+		Name = "Inject HD Admin #HD",
+		Run = function()
+			require(3239236979)
+		end
+	},
+	{
+		Name = "Mod HD Admin #HD",
+		Run = function()
+			print("If there is no HD Admin in game then this wont work ;)")
+			loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/stupid505/NEXUS-MENU-Roblox-/main/(moddedHD)"))()
+		end
+	}
+}
+
+-- DO NOT EDIT ANY OF THESE DOWN HERE UNLESS YOU KNOW WHAT YOUR DOING AND/OR A GOOD SCRIPTER
+
+local Gui = Instance.new("ScreenGui")
+Gui.ResetOnSpawn=false
+Gui.Parent=Player:WaitForChild("PlayerGui")
+
+local ShowButton = Instance.new("TextButton")
+ShowButton.Size=UDim2.fromScale(0.05,0.05)
+ShowButton.Position=UDim2.fromScale(0.01,0.02)
+ShowButton.Text="NEXUS"
+ShowButton.TextScaled=true
+ShowButton.Font=Enum.Font.GothamBold
+ShowButton.BackgroundColor3=Color3.fromRGB(30,30,30)
+ShowButton.TextColor3=Color3.fromRGB(255, 255, 255)
+ShowButton.Parent=Gui
+Instance.new("UICorner",ShowButton).CornerRadius=UDim.new(0,12)
+
+local Main = Instance.new("Frame")
+Main.Size=UDim2.fromScale(0.5,0.08)
+Main.Position=UDim2.fromScale(0.25,0.05)
+Main.BackgroundColor3=Color3.fromRGB(25,25,25)
+Main.BorderSizePixel=0
+Main.Visible=false
+Main.Parent=Gui
+Instance.new("UICorner",Main).CornerRadius=UDim.new(0,12)
+
+local HideButton = Instance.new("TextButton")
+HideButton.Size=UDim2.fromScale(0.08,1)
+HideButton.Text="X"
+HideButton.TextScaled=true
+HideButton.Font=Enum.Font.GothamBold
+HideButton.BackgroundColor3=Color3.fromRGB(40,40,40)
+HideButton.TextColor3=Color3.fromRGB(255,255,255)
+HideButton.Parent=Main
+Instance.new("UICorner",HideButton).CornerRadius=UDim.new(0,12)
+
+local Box = Instance.new("TextBox")
+Box.Size=UDim2.fromScale(0.92,1)
+Box.Position=UDim2.fromScale(0.08,0)
+Box.BackgroundTransparency=1
+Box.TextColor3=Color3.fromRGB(255,255,255)
+Box.PlaceholderText="BTW there is tags. (#category)"
+Box.TextScaled=true
+Box.Font=Enum.Font.GothamBold
+Box.ClearTextOnFocus=false
+Box.Parent=Main
+
+local Results = Instance.new("ScrollingFrame")
+Results.Size=UDim2.fromScale(1,4)
+Results.Position=UDim2.fromScale(0,1.1)
+Results.CanvasSize=UDim2.fromScale(0,0)
+Results.ScrollBarImageTransparency=0
+Results.BackgroundColor3=Color3.fromRGB(20,20,20)
+Results.BorderSizePixel=0
+Results.Visible=false
+Results.Parent=Main
+Instance.new("UICorner",Results).CornerRadius=UDim.new(0,12)
+
+local Layout = Instance.new("UIListLayout",Results)
+Layout.Padding=UDim.new(0,6)
+
+local function ClearResults()
+	for _,v in ipairs(Results:GetChildren()) do
+		if v:IsA("TextButton") then v:Destroy() end
+	end
+end
+
+local function RunCommand(text)
+	text=string.lower(text)
+	for _,cmd in ipairs(Commands) do
+		if string.lower(cmd.Name)==text then
+			cmd.Run()
+			return true
+		end
+	end
+	return false
+end
+
+local function UpdateCanvas()
+	task.wait()
+	Results.CanvasSize=UDim2.fromOffset(0,Layout.AbsoluteContentSize.Y+10)
+end
+
+local function UpdateResults(text)
+	ClearResults()
+	if text=="" then Results.Visible=false return end
+	local found=0
+	for _,cmd in ipairs(Commands) do
+		if string.find(string.lower(cmd.Name),string.lower(text),1,true) then
+			found+=1
+			local B=Instance.new("TextButton")
+			B.Size=UDim2.new(1,-10,0,40)
+			B.Position=UDim2.fromOffset(5,0)
+			B.BackgroundColor3=Color3.fromRGB(35,35,35)
+			B.TextColor3=Color3.fromRGB(255,255,255)
+			B.TextScaled=true
+			B.Font=Enum.Font.Gotham
+			B.Text=cmd.Name
+			B.Parent=Results
+			Instance.new("UICorner",B).CornerRadius=UDim.new(0,8)
+			B.MouseButton1Click:Connect(function()
+				cmd.Run()
+				Box.Text=""
+				Results.Visible=false
+			end)
+		end
+	end
+	UpdateCanvas()
+	Results.Visible=found>0
+end
+
+Box:GetPropertyChangedSignal("Text"):Connect(function()
+	UpdateResults(Box.Text)
+end)
+
+Box.FocusLost:Connect(function(enter)
+	if enter then
+		if RunCommand(Box.Text) then
+			Box.Text=""
+			Results.Visible=false
+		end
+	end
+end)
+
+ShowButton.MouseButton1Click:Connect(function()
+	Main.Visible=true
+	ShowButton.Visible=false
+	task.wait()
+	Box:CaptureFocus()
+end)
+
+HideButton.MouseButton1Click:Connect(function()
+	Main.Visible=false
+	Results.Visible=false
+	ShowButton.Visible=true
+end)
